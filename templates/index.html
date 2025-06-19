@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Recent Papers</h2>
+<div class="grid">
+    {% for p in papers %}
+    <div class="card">
+        <h3><a href="/paper/{{ p.id }}">{{ p.title }}</a></h3>
+        <p><strong>Authors:</strong> {{ p.authors }}</p>
+        <p><strong>Journal:</strong> {{ p.journal }}</p>
+        <p><strong>Date:</strong> {{ p.date }}</p>
+        <p>{{ p.summary }}</p>
+        <p><strong>Keywords:</strong> {{ p.keywords|join(', ') }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
