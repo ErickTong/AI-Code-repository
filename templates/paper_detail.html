@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if paper %}
+<h2>{{ paper.title }}</h2>
+<p><strong>Authors:</strong> {{ paper.authors }}</p>
+<p><strong>Journal:</strong> {{ paper.journal }}</p>
+<p><strong>Date:</strong> {{ paper.date }}</p>
+<h3>Enhanced Summary</h3>
+<p>{{ paper.summary }}</p>
+{% else %}
+<p>Paper not found.</p>
+{% endif %}
+{% endblock %}
